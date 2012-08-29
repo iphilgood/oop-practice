@@ -8,14 +8,17 @@ puts "#{stack.inspect}"
 
 puts "*******************"
 
+puts "Stack is getting pushed with 5"
 puts "#{stack.push(5)}"
 
 puts "*******************"
 
+puts "Just pop the first three items"
 puts "#{stack.pop(3)}"
 
 puts "*******************"
 
+puts "Push again with number 6"
 puts "#{stack.push(6)}"
 
 puts "*******************"

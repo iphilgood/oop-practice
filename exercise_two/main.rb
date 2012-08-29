@@ -20,7 +20,7 @@ puts "#{stack.push(6)}"
 
 puts "*******************"
 
-puts "Whats the lenght of the string?"
+puts "Whats the lenght of the array?"
 puts "=> #{stack.size} items, Sir!"
 
 puts "*******************"

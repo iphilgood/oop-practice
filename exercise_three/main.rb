@@ -30,5 +30,4 @@ puts "*" * 20
 ferrari.stop
 
 puts "*" * 20
-binding.pry
 

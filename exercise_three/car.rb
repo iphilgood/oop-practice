@@ -1,8 +1,10 @@
+# encoding: utf-8
+
 require_relative 'engine'
-require_relative 'window'
+require_relative 'door'
 
 class Car
-  attr_accessor :color, :car_type, :engine, :windows, :drive_state
+  attr_accessor :color, :car_type, :engine, :doors, :door_positions, :drive_state
 
 
   def initialize(color, car_type)
@@ -11,11 +13,18 @@ class Car
     @engine = Engine.new
     @drive_state = 'brake'
 
-    @windows = []
-    window_positions = ['front_left', 'front_right', 'back_left', 'back_right']
-    window_positions.each do |position|
-      @windows << Window.new(position)
+    @doors = []
+    @door_positions = ['vorne links', 'vorne rechts', 'hinten links', 'hinten rechts']
+
+    @door_positions.each do |position|
+      @doors << Door.new(position)
     end
+
+    puts "#{@car_type} in der Farbe #{@color} wurde gebaut."
+  end
+
+  def start
+    engine.start
   end
 
   def drive
@@ -28,9 +37,20 @@ class Car
     puts 'Jetzt mal volle Pulle auf die Bremsen, mein lieber Scholli!'
   end
 
-  def find_window(position)
-    @windows.each do |window|
-      window if window.position == position
+  def stop
+    engine.stop
+    puts 'Der Wagen steht still.'
+
+    @doors.each do |door|
+      door.close_window if door.window.is_open?
+    end
+  end
+
+  def find_door(position)
+    if @door_positions.include? position
+      doors.find{ |door| door.position == position }
+    else
+      puts 'Leider gibt es keine Türe an dieser Position.'
     end
   end
 end

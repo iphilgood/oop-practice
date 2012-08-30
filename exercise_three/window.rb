@@ -1,20 +1,20 @@
 class Window
-  attr_accessor :position, :state
+  attr_accessor :state
 
-  def initialize(position)
-    @position = position
-    @state = 'closed'
+  def initialize
+    @state = 'close'
   end
 
-  def open_window
-    @state = 'opened'
+  def open
+    @state = 'open'
   end
 
-  def close_window(position)
-    @state = 'closed'
+  def close
+    @state = 'close'
   end
 
-  def is_window_open?
-    @state == 'opened'
+  def is_open?
+    @state == 'open'
   end
 end
+

@@ -13,8 +13,7 @@ puts "#{stack.push(5)}"
 
 puts "*******************"
 
-puts "Just pop the first three items"
-puts "#{stack.pop(3)}"
+puts "Just pop the last item => #{stack.pop}"
 
 puts "*******************"
 

@@ -9,14 +9,11 @@ module Container
       @stack.push(item)
     end
 
-    def pop(item)
+    def pop
       if is_empty?
         puts 'Nope, that doesnt work my dear'
       else
-        item.times do
-          @stack.slice!(0)
-        end
-        @stack
+        @stack.pop
       end
     end
 
@@ -25,7 +22,7 @@ module Container
     end
 
     def is_empty?
-      @stack.size == 0
+      @stack.empty?
     end
 
     def size

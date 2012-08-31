@@ -8,7 +8,6 @@ module Container
     def push(val)
       self << val
       sort_by!{ |elem| elem[1] }
-      self
     end
 
     def pop
